@@ -1,5 +1,5 @@
 # Dockerfile development version
-FROM ruby:2.6.3 AS rails_react_recipe-development
+FROM ruby:2.7.2 AS rails_react_recipe-development
 
 ARG USER_ID
 ARG GROUP_ID
@@ -24,4 +24,6 @@ RUN yarn install
 RUN chown -R user:user /opt/app
 
 USER $USER_ID
-CMD bundle exec unicorn -c config/unicorn.rb
+# CMD bundle exec unicorn -c config/unicorn.rb
+
+CMD ["/bin/sh"]

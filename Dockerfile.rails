@@ -1,5 +1,5 @@
 # Dockerfile.rails
-FROM ruby:2.6.3 AS rails-toolbox
+FROM ruby:2.7.2 AS rails-toolbox
 
 ARG USER_ID
 ARG GROUP_ID

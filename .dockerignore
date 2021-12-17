@@ -1,0 +1,5 @@
+.git
+.dockerignore
+.env
+rails_react_recipe/node_modules/
+rails_react_recipe/vendor/bundle/
