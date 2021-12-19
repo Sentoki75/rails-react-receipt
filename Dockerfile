@@ -24,6 +24,4 @@ RUN yarn install
 RUN chown -R user:user /opt/app
 
 USER $USER_ID
-# CMD bundle exec unicorn -c config/unicorn.rb
-
-CMD ["/bin/sh"]
+CMD bundle exec unicorn -c config/unicorn.rb
