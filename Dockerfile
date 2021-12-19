@@ -9,7 +9,11 @@ RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg -o /root/yarn-pubkey.gpg && apt-key add /root/yarn-pubkey.gpg
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
-RUN apt-get update && apt-get install -y --no-install-recommends nodejs yarn
+RUN apt-get update && apt-get install -y --no-install-recommends yarn curl
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
+
+RUN node -v
 
 ENV INSTALL_PATH /opt/app
 RUN mkdir -p $INSTALL_PATH
